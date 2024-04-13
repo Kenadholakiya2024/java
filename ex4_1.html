@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profit/Loss Calculator</title>
+</head>
+<body>
+  <h2>Profit/Loss Calculator</h2>
+  
+  <label for="productionCost">Production Cost:</label>
+  <input type="number" id="productionCost"><br><br>
+  
+  <label for="salesCost">Sales Cost:</label>
+  <input type="number" id="salesCost"><br><br>
+  
+  <button onclick="calculateProfitLoss()">Calculate</button><br><br>
+
+  <h3>Result:</h3>
+  <div id="result"></div>
+
+  <script>
+    function calculateProfitLoss() {
+      var productionCost = parseFloat(document.getElementById("productionCost").value);
+      var salesCost = parseFloat(document.getElementById("salesCost").value);
+
+      var profitLoss = salesCost - productionCost;
+      var profitLossMessage;
+      var profitLossRate;
+
+      if (profitLoss > 0) {
+        profitLossMessage = "Profit:    " + profitLoss.toFixed(2);
+        profitLossRate = (profitLoss / productionCost) * 100;
+      } else if (profitLoss < 0) {
+        profitLossMessage = "Loss: " + (-profitLoss).toFixed(2);
+        profitLossRate = (-profitLoss / productionCost) * 100;
+      } else {
+        profitLossMessage = "No Profit, No Loss";
+        profitLossRate = 0;
+      }
+
+      document.getElementById("result").innerHTML = profitLossMessage + "<br>Profit/Loss Rate: " + profitLossRate.toFixed(2) + "%";
+    }
+  </script>
+</body>
+</html>

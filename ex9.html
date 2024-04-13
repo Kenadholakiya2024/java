@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="10" width="100%">
+        <tr>
+            <td width="15%">
+                <form action="" method="post" onsubmit="return multiplicationTable();">
+                    <table border="1" width="100%" cellpadding="10">
+                        <tr>
+                            <td align="center">
+                                <h2>Multiplication Table</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input placeholder="rows" type="number" name="rowcount" id="rowcount" required />
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <input placeholder="column" type="number" name="columncount" id="columncount"
+                                    required />
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Multiplication Table" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+            <td width="85%" valign="top" id="mytable">
+
+            </td>
+        </tr>
+    </table>
+    <script>
+        function multiplicationTable()
+        {
+            var result=rowcount*columncount
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number to Words Converter</title>
+</head>
+<body>
+  <h2>Number to Words Converter</h2>
+  
+  <label for="number">Enter a two-digit number:</label>
+  <input type="number" id="number" min="10" max="99"><br><br>
+  
+  <button onclick="convertToWords()">Convert</button><br><br>
+
+  <h3>Result:</h3>
+  <div id="result"></div>
+
+  <script>
+    function convertToWords() {
+      var number = parseInt(document.getElementById("number").value);
+
+      if (number < 10 || number > 99) {
+        alert("Please enter a valid two-digit number.");
+        return;
+      }
+
+      var ones = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+      var tens = ["", "one", "two", "three", "four", "five", "six", "seven", "eigh", "nine"];
+
+      var onesDigit = number % 10;
+      number = Math.floor(number / 10);
+      var tensDigit = number;
+
+      var result = tens[tensDigit];
+      if (onesDigit !== 0) {
+        result += " " + ones[onesDigit];
+      }
+
+      document.getElementById("result").innerHTML = "In words: " + result;
+    }
+  </script>
+</body>
+</html>

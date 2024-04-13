@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>count vegitables names that start with vowels</h3>
+    <hr>
+    <script>
+        var vegetables = ["artichoke", "asparagus", "broccoli", "carrot", 
+        "celery", "cucumber", "eggplant", "garlic", "lettuce", "mushroom",
+        "onion", "pepper", "potato", "pumpkin", "radish", "spinach",
+        "squash", "tomato", "zucchini", "beet", "cabbage", "cauliflower",
+        "corn", "green bean", "kale", "leek", "pea", "turnip", "yam",
+        "watercress"];
+        console.log(vegetables);
+        var v=0,c=0;
+        vegetables.map(function(veg){
+        //let text=veg[];
+        let letter=veg.charAt(0);
+        if(letter=='a' || letter=='e' || letter=='i' || letter=='o' || letter=='u' || letter=='A' || letter=='E' || letter=='I' || letter=='O' || letter=='U')
+            {
+                v=v+1;
+            }
+            else 
+            {
+                c=c+1;
+            }
+        });
+        console.log("Vowel =",v," Con = " + c);
+
+       
+    </script>
+</body>
+</html>

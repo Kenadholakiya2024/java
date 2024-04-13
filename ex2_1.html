@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Minutes Calculator</title>
+</head>
+
+<body>
+    <label for="hours">Hours:</label>
+    <input type="text" id="hours"><br><br>
+
+    <label for="minutes">Minutes:</label>
+    <input type="text" id="minutes"><br><br>
+
+    <button onclick="calculateTotalMinutes()">Calculate Total Minutes</button>
+
+    <script>
+        function calculateTotalMinutes() {
+            // Accepting inputs from the user
+            var hours = parseInt(document.getElementById("hours").value);
+            var minutes = parseInt(document.getElementById("minutes").value);
+
+            // Calculating total minutes
+            var totalMinutes = (hours * 60) + minutes;
+
+            // Displaying the result using alert
+            alert("Total minutes: " + totalMinutes);
+        }
+
+    </script>
+</body>
+
+</html>

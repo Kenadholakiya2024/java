@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <script>
+        
+        var amount = parseFloat(prompt("Enter the principal amount:"));
+        var rate = parseFloat(prompt("Enter the interest rate (in percentage):"));
+        var years = parseInt(prompt("Enter the number of years:"));
+
+        var simpleInterest = (amount * rate * years) / 100;
+
+        
+        document.write("<h2>Simple Interest Calculation</h2>");
+        document.write("<p>Principal Amount: " + amount.toFixed(2) + "</p>");
+        document.write("<p>Interest Rate: " + rate.toFixed(2) + "%</p>");
+        document.write("<p>Number of Years: " + years + "</p>");
+        document.write("<p>Simple Interest: " + simpleInterest.toFixed(2) + "</p>");
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odd or Even Number Calculator</title>
+</head>
+<body>
+
+<table width="40%" align="center" border="1">
+    <th><h2>Enter a Positive Integer:</h2></th>
+    <tr>
+        <td><input type="number" id="numberInput"></td>
+        <td><button onclick="calculate()">Calculate</button></td>
+    </tr>
+    <tr>
+        <td><p id="result"></p></td>
+    </tr>
+
+</table>
+<script>
+function calculate() {
+    let number = parseInt(document.getElementById("numberInput").value);
+
+    if (number > 0) {
+        if (number % 2 === 1) {
+            let square = number * number;
+            document.getElementById("result").innerText = "Square of " + number + " is " + square;
+        } else {
+            let cube = number * number * number;
+            document.getElementById("result").innerText = "Cube of " + number + " is " + cube;
+        }
+    } else {
+        document.getElementById("result").innerText = "Please enter a positive integer.";
+    }
+}
+</script>
+
+</body>
+</html>

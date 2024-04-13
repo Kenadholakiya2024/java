@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Tables</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiplication Tables</h1>
+    <div id="tablesContainer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var tablesContainer = document.getElementById("tablesContainer");
+
+            for (var i = 1; i <= 10; i++) {
+                var table = document.createElement("table");
+                var heading = document.createElement("h2");
+                heading.textContent = "Table of " + i;
+                tablesContainer.appendChild(heading);
+                tablesContainer.appendChild(table);
+
+                for (var j = 1; j <= 10; j++) {
+                    var row = table.insertRow();
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.textContent = i + " × " + j;
+                    cell2.textContent = i * j;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

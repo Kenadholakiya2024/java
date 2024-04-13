@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       
+        var number = parseInt(prompt("Enter a two-digit number:"));
+
+        
+        var tensDigit = Math.floor(number / 10);
+        var onesDigit = number % 10;
+
+        
+        var tensWord;
+        var onesWord;
+
+        switch (tensDigit) {
+            case 1:
+                tensWord = "one";
+                break;
+            case 2:
+                tensWord = "two";
+                break;
+            case 3:
+                tensWord = "three";
+                break;
+            case 4:
+                tensWord = "four";
+                break;
+            case 5:
+                tensWord = "five";
+                break;
+            case 6:
+                tensWord = "six";
+                break;
+            case 7:
+                tensWord = "seven";
+                break;
+            case 8:
+                tensWord = "eight";
+                break;
+            case 9:
+                tensWord = "nine";
+                break;
+            default:
+                tensWord = "";
+        }
+
+        switch (onesDigit) {
+            case 0:
+                onesWord = "zero";
+                break;
+            case 1:
+                onesWord = "one";
+                break;
+            case 2:
+                onesWord = "two";
+                break;
+            case 3:
+                onesWord = "three";
+                break;
+            case 4:
+                onesWord = "four";
+                break;
+            case 5:
+                onesWord = "five";
+                break;
+            case 6:
+                onesWord = "six";
+                break;
+            case 7:
+                onesWord = "seven";
+                break;
+            case 8:
+                onesWord = "eight";
+                break;
+            case 9:
+                onesWord = "nine";
+                break;
+            default:
+                onesWord = "";
+        }
+
+        // Displaying the number in words
+        document.write("In words: " + tensWord + " " + onesWord);
+
+    </script>
+</body>
+
+</html>

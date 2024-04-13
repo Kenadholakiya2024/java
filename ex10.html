@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="return doCalculation();">
+        <table width="100%" cellpadding="10" border="3">
+            <tr>
+                <td>
+                    principle
+                    <input type="number" id="principle" required />
+                </td>
+                <td>
+                    year
+                    <input type="number" id="year" required />
+                </td>
+                <td>
+                    rate
+                    <input type="number" id="rate" required />
+                </td>
+                <td>
+                    <input type="submit" value="Simple intrest">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table border="5" align="center" width="50%">
+        <tr>
+            <td>
+                Simple intrest
+            </td>
+            <td id="si">
+            </td>
+        </tr>
+    </table>
+    <script>
+        function doCalculation() {
+            var Mymath = {
+                principle: 0,
+                year: 0,
+                rate: 0,
+                getsimpleintrest: function () {
+                    let temp = (this.principle * this.year * this.rate) / 100;
+                    return temp;
+                }
+            }
+
+
+            Mymath.principle = parseInt(document.getElementById('principle').value);
+            Mymath.year = parseInt(document.getElementById('year').value);
+            Mymath.rate = parseInt(document.getElementById('rate').value);
+
+            console.log(Mymath.principle, Mymath.year, Mymath.rate);
+
+            let si = Mymath.getsimpleintrest();
+            document.getElementById('si').innerHTML = si;
+            return false;
+        }
+
+
+    </script>
+</body>
+
+</html>

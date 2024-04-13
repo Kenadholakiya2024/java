@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=-, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body> 
+    <script>
+        // Accepting inputs from the user
+        var productionCost = parseFloat(prompt("Enter the production cost of the product:"));
+        var salesCost = parseFloat(prompt("Enter the sales cost of the product:"));
+
+        // Calculating profit or loss
+        var profitOrLoss = salesCost - productionCost;
+
+        // Calculating profit or loss rate
+        var profitOrLossRate = (profitOrLoss / productionCost) * 100;
+
+        // Displaying the result using document.write method
+        document.write("<h2>Profit/Loss Calculation</h2>");
+        document.write("<p>Production Cost: " + productionCost.toFixed(2) + "</p>");
+        document.write("<p>Sales Cost: " + salesCost.toFixed(2) + "</p>");
+
+        if (profitOrLoss > 0) {
+            document.write("<p>Profit: " + profitOrLoss.toFixed(2) + "</p>");
+            document.write("<p>Profit Rate: " + profitOrLossRate.toFixed(2) + "%</p>");
+        } else if (profitOrLoss < 0) {
+            document.write("<p>Loss: " + Math.abs(profitOrLoss).toFixed(2) + "</p>");
+            document.write("<p>Loss Rate: " + Math.abs(profitOrLossRate).toFixed(2) + "%</p>");
+        } else {
+            document.write("<p>No Profit, No Loss</p>");
+        }
+
+    </script>
+</body>
+
+</html>
