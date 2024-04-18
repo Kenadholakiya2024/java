@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Example</title>
+    <script>
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function deleteCookie(name) {
+            document.cookie = name + '=; Max-Age=-99999999;';
+        }
+
+        function checkCookie() {
+            var username = getCookie("username");
+            if (username != null && username != "") {
+                alert("Welcome back " + username);
+            } else {
+                username = prompt("Please enter your name:", "");
+                if (username != null && username != "") {
+                    setCookie("username", username, 30);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body onload="checkCookie()">
+    <h2>Cookie Example</h2>
+    <p>This page will greet you if you've visited before and remember your name.</p>
+    <p>Refresh the page to see the functionality in action.</p>
+    <button onclick="deleteCookie('username')">Delete Cookie</button>
+</body>
+
+</html>
